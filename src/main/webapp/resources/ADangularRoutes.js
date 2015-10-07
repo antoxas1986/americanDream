@@ -5,8 +5,11 @@
 
 	function config($routeProvider, $locationProvider, $httpProvider) {
 		$routeProvider.when('/', {
-			templateUrl : '',
-			controller : '',
+			templateUrl : '/resources/components/index/partialIndex.html',
+			controller : 'indexController',
+		}).when('put url', {
+			templateUrl : 'url to partial',
+			controller : 'controller name from partialcontroller file',
 		}).otherwise({
 			redirectTo : '/'
 		});

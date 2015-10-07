@@ -1,15 +1,41 @@
-<html>
+<html data-ng-app="americanDream">
 <head>
-<title></title>
+<title>American Dream</title>
+<!-- CSS custom files -->
+
+<!-- jQuery -->
+<script src="resources/library/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="resources/library/bootstrap/css/bootstrap.min.css" />
+<script src="resources/library/bootstrap/js/bootstrap.min.js"></script>
+
 <!-- Angular JS library -->
-<script src = "resources/library/angular/angular.min.js"></script>
+<script src="resources/library/angular/angular.min.js"></script>
+<script src="resources/library/angular/angular-route.min.js"></script>
+<script src="resources/library/angular/angular-resource.min.js"></script>
+
+<!-- Angular JS app main -->
+<script src="resources/ADangularMain.js"></script>
+<script src="resources/ADangularRoutes.js"></script>
+<script src="resources/ADangularDirectives.js"></script>
+
+<!-- Index partial source -->
+<script src="resources/components/index/indexController.js"></script>
+<script src="resources/components/index/indexService.js"></script>
+
+<!-- Another partial source -->
+
+<!-- Another partial source -->
+
 </head>
 <body>
-<h1>Hello Test2</h1>
+	<h1>Hello Test</h1>
 
-<div>
-
-
-</div>
+	<div class="container">
+		<!-- All partials will be load inside data-ng-view tag below -->
+		<div data-ng-view></div>
+	</div>
 </body>
 </html>
