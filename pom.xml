@@ -49,8 +49,7 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-
-
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -62,7 +61,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
+		
 		<!-- Need this for Hibernate -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -79,7 +78,14 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
-
+		
+		<!-- Java Mail API -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+		
 		<!-- MySQL connection driver dependency -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -137,7 +143,8 @@
 			<version>2.0.26-beta</version>
 			<scope>test</scope>
 		</dependency>
-
+		
+		
 	</dependencies>
 	<build>
 		<plugins>
