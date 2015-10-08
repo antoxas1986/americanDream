@@ -21,5 +21,9 @@ public class HomeController {
 	public String main(){
 		return "index";
 	}
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String main2(){
+		return "index";
+	}
 }
 
