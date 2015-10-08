@@ -9,5 +9,5 @@
 	var routes = angular.module('routes', []);
 
 	var myApp = angular.module('americanDream', [ 'ngRoute', 'directives',
-			'controllers', 'services', 'routes' ]);
+			'controllers', 'services', 'routes','ngResource']);
 }());
