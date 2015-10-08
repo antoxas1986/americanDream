@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.AD2015.americanDream</groupId>
 	<artifactId>AmericanDream</artifactId>
@@ -73,22 +74,10 @@
 			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		
-		
-		<!--Selenium testing -->
-		
 		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.46.0</version>
-		</dependency>
-
-
-		<!-- Hibernate with JPA 2.0 support dependency -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.7.Final</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>4.1.6.RELEASE</version>
 		</dependency>
 
 		<!-- MySQL connection driver dependency -->
@@ -142,8 +131,6 @@
 			<version>2.5</version>
 		</dependency>
 
-
-
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -154,6 +141,48 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.16.v20140903</version>
+				<configuration>
+					<scanIntervalSeconds>2</scanIntervalSeconds>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<compilerArgument>-Xlint:all</compilerArgument>
+					<showWarnings>true</showWarnings>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<configuration>
+					<mainClass>org.test.int1.Main</mainClass>
+				</configuration>
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -197,60 +226,63 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.17</version>
-				<configuration>
-					<excludes>
-						<exclude>**/webdriver/*.java
-						</exclude>
-					</excludes>
-				</configuration>
-				<executions>
-					<execution>
-						<id>integration-tests</id>
-						<phase>integration-test</phase>
-						<goals>
-							<goal>test</goal>
-						</goals>
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-surefire-plugin</artifactId> -->
+			<!-- <version>2.17</version> -->
+			<!-- <configuration> -->
+			<!-- <excludes> -->
+			<!-- <exclude>**/webdriver/*.java -->
+			<!-- </exclude> -->
+			<!-- </excludes> -->
+			<!-- </configuration> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>integration-tests</id> -->
+			<!-- <phase>integration-test</phase> -->
+			<!-- <goals> -->
+			<!-- <goal>test</goal> -->
+			<!-- </goals> -->
+			<!-- <configuration> -->
+			<!-- <skip>false</skip> -->
+			<!-- <excludes> -->
+			<!-- <exclude>none</exclude> -->
+			<!-- </excludes> -->
+			<!-- <includes> -->
+			<!-- <include>**/webdriver/*.java -->
+			<!-- </include> -->
+			<!-- </includes> -->
+			<!-- </configuration> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- </plugin> -->
+
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<!-- When built in OpenShift the openshift profile will be used when invoking 
+				mvn. -->
+			<!-- Use this profile for any OpenShift specific customization your app 
+				will need. -->
+			<!-- By default that is to put the resulting archive into the deployments 
+				folder. -->
+			<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
+			<id>openshift</id>
+			<build>
+				<finalName>americanDream</finalName>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.4</version>
 						<configuration>
-							<skip>false</skip>
-							<excludes>
-								<exclude>none</exclude>
-							</excludes>
-							<includes>
-								<include>**/webdriver/*.java
-								</include>
-							</includes>
+							<outputDirectory>deployments</outputDirectory>
+							<warName>ROOT</warName>
 						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+					</plugin>
 
-		</plugins>
-	</build>
-<profiles>
-        <profile>
-<!-- When built in OpenShift the openshift profile will be used when invoking mvn. -->
-<!-- Use this profile for any OpenShift specific customization your app will need. -->
-<!-- By default that is to put the resulting archive into the deployments folder. -->
-<!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
-	<id>openshift</id>
-	<build>
-		<finalName>americanDream</finalName>
-		<plugins>
-			<plugin>
-       <artifactId>maven-war-plugin</artifactId>
-       <version>2.4</version>
-       <configuration>
-         <outputDirectory>deployments</outputDirectory>
-         <warName>ROOT</warName>
-       </configuration>
-     </plugin>
-
-		</plugins>
-	</build>
-</profile>
-    </profiles>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
