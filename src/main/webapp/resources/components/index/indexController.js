@@ -4,6 +4,13 @@
 			  function($rootScope, $scope, indexService) {
 				$scope.start = function(){
 					alert("Some start code");
-				}
+				};
+				
+					
+					
+					
+					
+					
+					
 			} ]);
 }());
