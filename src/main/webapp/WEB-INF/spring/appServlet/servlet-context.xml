@@ -38,9 +38,9 @@
 	<!-- For JDBC we no longer use the persistence.xml -->
 	<beans:bean id="dataSource"	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url" value="jdbc:mysql://73.128.118.113:3306/gloremProjects" />
-		<beans:property name="username" value="glorem" />
-		<beans:property name="password" value="Glorem44" />
+		<beans:property name="url" value="jdbc:mysql://73.128.118.113:3306/americanDream" />
+		<beans:property name="username" value="americanDream" />
+		<beans:property name="password" value="american23" />
 	</beans:bean>
 	
 	<!-- Configure to plugin JSON as request and response in method handler -->
