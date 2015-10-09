@@ -4,13 +4,16 @@
 	config.$inject = [ '$routeProvider', '$locationProvider', '$httpProvider' ];
 
 	function config($routeProvider, $locationProvider, $httpProvider) {
-		$routeProvider.when('/', {
+		$routeProvider
+		.when('/', {
 			templateUrl : '/resources/components/index/partialIndex.html',
 			controller : 'indexController',
-		}).when('put url', {
-			templateUrl : 'url to partial',
-			controller : 'controller name from partialcontroller file',
-		}).otherwise({
+		})
+		.when('/createHero', {
+			templateUrl : '/resources/components/createHero/partialCreateHero.html',
+			controller : 'creatHeroController',
+		})
+		.otherwise({
 			redirectTo : '/'
 		});
 
