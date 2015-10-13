@@ -1,11 +1,16 @@
 package com.AD2015.americanDream.service;
 
 import com.AD2015.americanDream.models.Hero;
+import com.AD2015.americanDream.daos.HeroDao;
 
 public class HeroServiceImpl implements HeroService{
 
 	
+	private HeroDao heroDao;
 
+	public void setHeroDao(HeroDao heroDao) {
+		this.heroDao = heroDao;
+	}
 
 	@Override
 	public Hero getHeroByUserName(String username) {
@@ -21,7 +26,7 @@ public class HeroServiceImpl implements HeroService{
 
 	@Override
 	public void update(Hero hero) {
-		// TODO Auto-generated method stub
+		heroDao.updateHero(hero);
 		
 	}
 
