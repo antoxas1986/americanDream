@@ -5,8 +5,9 @@
 				
 				
 				$scope.start = function(){
-					alert("Some start code");
+					alert("hello");
 				};
+				
 				
 				
 				//This makes call to back-end to bring all available hero`s names.
