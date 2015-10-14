@@ -1,11 +1,10 @@
-package com.AD2015.americanDream.service;
+package com.AD2015.americanDream.serviceImpl;
 
-import com.AD2015.americanDream.models.Hero;
 import com.AD2015.americanDream.daos.HeroDao;
+import com.AD2015.americanDream.models.Hero;
+import com.AD2015.americanDream.service.HeroService;
 
-public class HeroServiceImpl implements HeroService{
-
-	
+public class HeroServiceImpl implements HeroService {
 	private HeroDao heroDao;
 
 	public void setHeroDao(HeroDao heroDao) {
@@ -21,22 +20,19 @@ public class HeroServiceImpl implements HeroService{
 	@Override
 	public void create(Hero hero) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void update(Hero hero) {
 		heroDao.updateHero(hero);
-		
+
 	}
 
 	@Override
 	public void delete(Hero hero) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
-
-	
 }
