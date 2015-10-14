@@ -22,7 +22,7 @@ public class HeroDaoImpl implements HeroDao{
 	public void updateHero(Hero hero) {
 		
 		jdbcTemplate.update(UPDATE_HERO, hero.getName(), hero.getAge(), hero.getGender(), hero.getExperiance(),
-				hero.getMoney(), hero.getStrengh(), hero.getLevel(), hero.getHappieness());
+				hero.getMoney(), hero.getStrength(), hero.getLevel(), hero.getHappieness());
 		}
 		
 	}

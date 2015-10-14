@@ -7,7 +7,7 @@ public class Hero {
 	private String gender;
 	private Integer experiance;
 	private Integer money;
-	private Integer strengh;
+	private Integer strength;
 	private Integer level;
 	private Integer happieness;
 	
@@ -42,11 +42,11 @@ public class Hero {
 	public void setMoney(Integer money) {
 		this.money = money;
 	}
-	public Integer getStrengh() {
-		return strengh;
+	public Integer getStrength() {
+		return strength;
 	}
-	public void setStrengh(Integer strengh) {
-		this.strengh = strengh;
+	public void setStrength(Integer strength) {
+		this.strength = strength;
 	}
 	public Integer getLevel() {
 		return level;
