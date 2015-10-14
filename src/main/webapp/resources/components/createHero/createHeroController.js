@@ -4,7 +4,10 @@
 			  function($rootScope, $scope, createHeroService) {
 				
 				
-				
+				$scope.create = function(){
+					alert("something")
+							
+				};
 				
 				
 				
