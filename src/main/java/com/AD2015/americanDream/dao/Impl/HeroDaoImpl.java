@@ -1,4 +1,4 @@
-package com.AD2015.americanDream.daosImpl;
+package com.AD2015.americanDream.dao.Impl;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 

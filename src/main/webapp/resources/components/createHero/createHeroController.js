@@ -1,5 +1,5 @@
 (function() {
-	angular.module('controllers').controller('creatHeroController',
+	angular.module('controllers').controller('createHeroController',
 			[ '$rootScope', '$scope', 'createHeroService',
 			  function($rootScope, $scope, createHeroService) {
 				

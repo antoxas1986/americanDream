@@ -2,6 +2,8 @@
 <head>
 <title>American Dream</title>
 <!-- CSS custom files -->
+<link href="/resources/css/index.css" rel="stylesheet" type="text/css" />
+
 
 <!-- jQuery -->
 <script src="resources/library/jquery/jquery.min.js"></script>
@@ -26,14 +28,31 @@
 <script src="resources/components/index/indexService.js"></script>
 
 <!-- Another partial source -->
+<script type="text/javascript"
+	src="/resources/components/createHero/createHeroController.js">
+</script>
+<script type="text/javascript"
+	src="/resources/components/createHero/ServiceCreateHero.js">
+</script>
 
 <!-- Another partial source -->
 
 </head>
-<body>
+<body class="body">
 	<div class="container">
 		<!-- All partials will be load inside data-ng-view tag below -->
-		<div data-ng-view> </div>
+		<div data-ng-view></div>
 	</div>
+	
+	
+	
+	<link href="/resources/css/component.css" rel="stylesheet"
+		type="text/css" />
+	<script type="text/javascript"
+		src="/resources/library/helperJS/modernizr.custom.js">
+</script>
+	<link href="/resources/css/normalize.css" rel="stylesheet"
+		type="text/css" />
+	<link href="/resources/css/demo.css" rel="stylesheet" type="text/css" />
 </body>
 </html>

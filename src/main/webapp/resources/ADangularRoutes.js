@@ -11,7 +11,7 @@
 		})
 		.when('/createHero', {
 			templateUrl : '/resources/components/createHero/partialCreateHero.html',
-			controller : 'creatHeroController',
+			controller : 'createHeroController',
 		})
 		.otherwise({
 			redirectTo : '/'
