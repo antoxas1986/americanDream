@@ -1,5 +1,7 @@
 package com.AD2015.americanDream.service.Impl;
 
+import java.util.List;
+
 import com.AD2015.americanDream.daos.HeroDao;
 import com.AD2015.americanDream.models.Hero;
 import com.AD2015.americanDream.service.HeroService;
@@ -13,8 +15,8 @@ public class HeroServiceImpl implements HeroService {
 
 	@Override
 	public Hero getHeroByUserName(String username) {
-		// TODO Auto-generated method stub
 		return heroDao.getHeroByUserName(username);
+
 	}
 
 	@Override
@@ -33,6 +35,10 @@ public class HeroServiceImpl implements HeroService {
 		heroDao.delete(username);
 
 	}
+    
+	@Override
+	public List<Hero> getHeroNames() {
+		return heroDao.getHeroNames();
+       
+	}
 }
-
-

@@ -4,9 +4,7 @@
  */
 package com.AD2015.americanDream.controller;
 
-
-
-
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,25 +21,29 @@ import com.AD2015.americanDream.service.HeroService;
  */
 @Controller
 public class HomeController {
-	
+
 	HeroService heroService;
+
 	/**
 	 * @return
 	 */
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String main(){
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String main() {
 		return "index";
 	}
-	@RequestMapping(value="/login", method=RequestMethod.GET)
-	public String main2(){
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String main2() {
 		return "index";
 	}
+
 	@RequestMapping(value = "/hero/{username}", method = RequestMethod.GET)
-	public Hero getHero(@PathVariable String username)
-	{
+	public Hero getHero(@PathVariable String username) {
 		return heroService.getHeroByUserName(username);
 	}
 	
+	@RequestMapping(value = "/hero", method = RequestMethod.GET)
+	public List<Hero> getHeroNames() {
+		return heroService.getHeroNames();
+	}
 }
-
-

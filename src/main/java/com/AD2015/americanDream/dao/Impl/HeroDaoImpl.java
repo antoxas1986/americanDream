@@ -1,5 +1,7 @@
 package com.AD2015.americanDream.dao.Impl;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.AD2015.americanDream.daos.HeroDao;
@@ -14,7 +16,8 @@ public class HeroDaoImpl implements HeroDao {
 	public static final String CREATE_HERO = "INSERT INTO hero (name, age, gender, experiance, money, strength, level, happieness) "
 			+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 	public static final String GET_HERO = "SELECT name, age, gender, experiance, money, strength, level, happieness FROM hero  WHERE name = ?";
-
+    public static final String GET_NAMES = "SELECT name FROM hero";
+	
 	private JdbcTemplate jdbcTemplate;
 
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
@@ -47,6 +50,12 @@ public class HeroDaoImpl implements HeroDao {
 
 		return jdbcTemplate.queryForObject(GET_HERO, new Object[] { username }, new HeroMapper());
 
+	}
+
+	@Override
+	public List<Hero> getHeroNames() {
+		
+		return jdbcTemplate.query(GET_NAMES, new HeroMapper());
 	}
 	
 
