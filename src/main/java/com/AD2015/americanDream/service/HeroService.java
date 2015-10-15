@@ -6,8 +6,7 @@ public interface HeroService {
 	
 	public void create(Hero hero);
 	public void update(Hero hero);
-	public void delete (Hero hero);
+	public void delete (String username);
     Hero getHeroByUserName(String username);
-    
     
 }

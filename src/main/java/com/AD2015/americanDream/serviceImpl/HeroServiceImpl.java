@@ -30,8 +30,8 @@ public class HeroServiceImpl implements HeroService {
 	}
 
 	@Override
-	public void delete(Hero hero) {
-		// TODO Auto-generated method stub
+	public void delete(String username) {
+		heroDao.delete(username);
 
 	}
 
