@@ -5,6 +5,11 @@
 //			getHeroNames: $resource('/',{},{
 //				'get':{method:'GET',isArray:true}
 //			})
+			
+			
+			
+			
+			
 		}
 	})
 	
