@@ -14,13 +14,12 @@ public class HeroServiceImpl implements HeroService {
 	@Override
 	public Hero getHeroByUserName(String username) {
 		// TODO Auto-generated method stub
-		return null;
+		return heroDao.getHeroByUserName(username);
 	}
 
 	@Override
 	public void create(Hero hero) {
-		// TODO Auto-generated method stub
-
+		heroDao.create(hero);
 	}
 
 	@Override
@@ -34,7 +33,6 @@ public class HeroServiceImpl implements HeroService {
 		heroDao.delete(username);
 
 	}
-
 }
 
 

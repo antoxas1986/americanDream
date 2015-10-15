@@ -41,12 +41,13 @@ public class HeroDaoImpl implements HeroDao {
 				hero.getMoney(), hero.getStrength(), hero.getLevel(), hero.getHappieness(), hero.getName());
 
 	}
-
+   
 	@Override
 	public Hero getHeroByUserName(String username) {
 
 		return jdbcTemplate.queryForObject(GET_HERO, new Object[] { username }, new HeroMapper());
 
 	}
+	
 
 }
