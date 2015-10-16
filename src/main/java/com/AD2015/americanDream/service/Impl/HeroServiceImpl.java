@@ -39,6 +39,5 @@ public class HeroServiceImpl implements HeroService {
 	@Override
 	public List<Hero> getHeroNames() {
 		return heroDao.getHeroNames();
-       
 	}
 }

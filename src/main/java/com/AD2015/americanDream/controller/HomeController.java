@@ -6,6 +6,8 @@ package com.AD2015.americanDream.controller;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,5 +47,10 @@ public class HomeController {
 	@RequestMapping(value = "/hero", method = RequestMethod.GET)
 	public List<Hero> getHeroNames() {
 		return heroService.getHeroNames();
+	}
+	
+	@RequestMapping(value = "/hero/{hero}", method = RequestMethod.POST)
+	public void createHero(@PathVariable Hero hero) {
+		heroService.create(hero);
 	}
 }

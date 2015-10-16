@@ -58,5 +58,5 @@ public class HeroDaoImpl implements HeroDao {
 		return jdbcTemplate.query(GET_NAMES, new HeroMapper());
 	}
 	
-
+	
 }

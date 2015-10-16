@@ -12,15 +12,19 @@
 					var hero = {};
 				    hero.name = inputName.value;
 				    hero.age = 21;
-				    hero.gender = gender; 
+				    hero.gender = "m"; 
 				    hero.experiance = 0;
 				    hero.money = 100;
-				    hero.strength = 5;      //10 level scale
+				    hero.strength = 5;      // 10 level scale
 				    hero.level = 1;
-				    hero.happieness = 2;    //10 level scale
+				    hero.happieness = 2;    // 10 level scale
 				    console.log(hero);
 					
-				};
+				
+					}	
+	
+				
+				
 					
 		
 			} ]);
