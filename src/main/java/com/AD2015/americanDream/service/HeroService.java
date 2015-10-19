@@ -13,5 +13,5 @@ public interface HeroService {
 	public void update(Hero hero);
 	public void delete (String username);
     Hero getHeroByUserName(String username);
-    List<Hero> getHeroNames();
+    List<String> getHeroNames();
 }

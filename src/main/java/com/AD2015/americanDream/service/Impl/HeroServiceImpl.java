@@ -45,7 +45,7 @@ public class HeroServiceImpl implements HeroService {
 	}
     
 	@Override
-	public List<Hero> getHeroNames() {
+	public List<String> getHeroNames() {
 		return heroDao.getHeroNames();
 	}
 }

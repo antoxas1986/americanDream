@@ -5,6 +5,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -63,9 +64,9 @@ public class HeroDaoImpl implements HeroDao {
 	}
 
 	@Override
-	public List<Hero> getHeroNames() {
+	public List<String> getHeroNames() {
 		
-		return jdbcTemplate.query(GET_NAMES, new HeroMapper());
+		return jdbcTemplate.query(GET_NAMES, new BeanPropertyRowMapper<String>(String.class) );
 	}
 	
 	

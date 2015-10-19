@@ -49,7 +49,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/hero", method = RequestMethod.GET)
-	public List<Hero> getHeroNames() {
+	public List<String> getHeroNames() {
 		return heroService.getHeroNames();
 	}
 	

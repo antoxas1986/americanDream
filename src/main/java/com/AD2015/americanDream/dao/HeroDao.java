@@ -10,5 +10,5 @@ public interface HeroDao {
 	 void delete(String username);
 	 void create(Hero hero);
 	 Hero getHeroByUserName(String username);
-	 List<Hero> getHeroNames();
+	 List<String> getHeroNames();
 }
