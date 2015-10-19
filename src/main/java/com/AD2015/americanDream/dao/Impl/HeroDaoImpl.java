@@ -2,24 +2,34 @@ package com.AD2015.americanDream.dao.Impl;
 
 import java.util.List;
 
-import org.springframework.jdbc.core.JdbcTemplate;
+import javax.sql.DataSource;
 
-import com.AD2015.americanDream.daos.HeroDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+
+import com.AD2015.americanDream.dao.HeroDao;
 import com.AD2015.americanDream.daos.mapper.HeroMapper;
 import com.AD2015.americanDream.models.Hero;
 
+@Component
 public class HeroDaoImpl implements HeroDao {
 
-	public static final String UPDATE_HERO = "UPDATE hero SET name = ?,age =?, gender = ?, experiance = ?,money =?"
-			+ "strength=?,level=?,happieness=? WHERE name=?";
+	public static final String UPDATE_HERO = "UPDATE hero SET name = ?,age =?, gender = ?, experience = ?,money =?"
+			+ "strength=?,level=?,happiness=? WHERE name=?";
 	public static final String DELETE_HERO = "DELETE FROM hero WHERE name = ?";
-	public static final String CREATE_HERO = "INSERT INTO hero (name, age, gender, experiance, money, strength, level, happieness) "
+	public static final String CREATE_HERO = "INSERT INTO hero (name, age, gender, experience, money, strength, level, happiness) "
 			+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-	public static final String GET_HERO = "SELECT name, age, gender, experiance, money, strength, level, happieness FROM hero  WHERE name = ?";
+	public static final String GET_HERO = "SELECT name, age, gender, experience, money, strength, level, happiness FROM hero  WHERE name = ?";
     public static final String GET_NAMES = "SELECT name FROM hero";
 	
 	private JdbcTemplate jdbcTemplate;
 
+	@Autowired
+	public void setJdbcTemplate(DataSource dataSource) {
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
+	
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}

@@ -2,11 +2,19 @@ package com.AD2015.americanDream.service.Impl;
 
 import java.util.List;
 
-import com.AD2015.americanDream.daos.HeroDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.AD2015.americanDream.dao.HeroDao;
 import com.AD2015.americanDream.models.Hero;
 import com.AD2015.americanDream.service.HeroService;
 
+@Service
+@Transactional
 public class HeroServiceImpl implements HeroService {
+	
+	@Autowired
 	private HeroDao heroDao;
 
 	public void setHeroDao(HeroDao heroDao) {

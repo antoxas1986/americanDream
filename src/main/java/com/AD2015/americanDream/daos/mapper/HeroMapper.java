@@ -18,11 +18,11 @@ public class HeroMapper implements RowMapper<Hero>{
 		hero.setName(rs.getString("name"));
 		hero.setAge(rs.getInt("age"));
 		hero.setGender(rs.getString("gender"));
-		hero.setExperiance(rs.getInt("experiance"));
+		hero.setExperiance(rs.getInt("experience"));
 		hero.setMoney(rs.getInt("money"));
 		hero.setStrength(rs.getInt("strength"));
 		hero.setLevel(rs.getInt("level"));
-		hero.setHappieness(rs.getInt("happieness"));
+		hero.setHappieness(rs.getInt("happiness"));
 		
 		return hero;
 	}

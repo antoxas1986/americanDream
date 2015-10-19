@@ -6,8 +6,7 @@ package com.AD2015.americanDream.controller;
 
 import java.util.List;
 
-import javax.swing.JOptionPane;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +23,7 @@ import com.AD2015.americanDream.service.HeroService;
 @Controller
 public class HomeController {
 
+	@Autowired
 	HeroService heroService;
 
 	/**
@@ -31,6 +31,10 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String main() {
+		String username = "Jack";
+		Hero hero = heroService.getHeroByUserName(username);
+		System.out.println("hero: " + hero.getName());
+		
 		return "index";
 	}
 
