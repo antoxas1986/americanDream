@@ -66,7 +66,7 @@ public class HeroDaoImpl implements HeroDao {
 	@Override
 	public List<String> getHeroNames() {
 		
-		return jdbcTemplate.query(GET_NAMES, new BeanPropertyRowMapper<String>(String.class) );
+		return jdbcTemplate.queryForList(GET_NAMES, String.class);
 	}
 	
 	

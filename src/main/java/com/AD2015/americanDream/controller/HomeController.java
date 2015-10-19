@@ -4,6 +4,7 @@
  */
 package com.AD2015.americanDream.controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class HomeController {
 		String username = "Jack";
 		Hero hero = heroService.getHeroByUserName(username);
 		System.out.println("hero: " + hero.getName());
-		
+		System.out.println(getHeroNames());
 		return "index";
 	}
 
