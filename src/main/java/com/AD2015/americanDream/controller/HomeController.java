@@ -10,6 +10,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -54,8 +55,9 @@ public class HomeController {
 		return heroService.getHeroNames();
 	}
 	
-	@RequestMapping(value = "/hero/{hero}", method = RequestMethod.POST)
-	public void createHero(@PathVariable Hero hero) {
+	@RequestMapping(value = "/hero", method = RequestMethod.POST)
+	public void createHero(@RequestBody Hero hero) {
 		heroService.create(hero);
+		System.out.println(hero.getName());
 	}
 }
