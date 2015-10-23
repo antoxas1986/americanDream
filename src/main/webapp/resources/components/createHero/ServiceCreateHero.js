@@ -5,6 +5,7 @@
 			
 			     getHeroNames: $resource('/hero',{},{
 				'get':{method:'GET',isArray:true}
+			     
 			})
 			
 			
@@ -12,7 +13,7 @@
 		}
 		
 			
-			
+		console.log(getHeroNames);	
 			
 		
 	})
