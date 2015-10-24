@@ -2,26 +2,25 @@
 	angular.module('controllers').controller('createHeroController',
 			[ '$rootScope', '$scope', 'createHeroService',
 			  function($rootScope, $scope, createHeroService) {
+				$scope.hero ={age:21,money:100};
 				
-				
-				$scope.create = function(){
+				$scope.create = function(hero){
 					if (inputName.value == ""){
 						alert("Your Hero needs a name");
 					}
-					var gender;
-					var hero = {};
-				    hero.name = inputName.value;
-				    hero.age = 21;
-				    hero.gender = "m"; 
-				    hero.experiance = 0;
-				    hero.money = 100;
-				    hero.strength = 5;      // 10 level scale
-				    hero.level = 1;
-				    hero.happieness = 2;    // 10 level scale
-				    console.log(hero);
-					
-				
-					}	
+				};
+//				//Option1 inserting hero from scope
+//				$scope.updateHero = function() {
+//					createHeroService.hero.update($scope.hero, function() {
+//						//do something here after y update hero. Change page or something else.
+//					});
+//				};
+//				//Option2 inserting hero from html. (ex: ng-model="updateHero(hero)")
+//				$scope.updateHero = function(hero) {
+//					createHeroService.hero.update(hero, function() {
+//						//do something here after y update hero. Change page or something else.
+//					});
+//				};
 	
 				
 				
