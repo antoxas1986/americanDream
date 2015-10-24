@@ -4,18 +4,18 @@
 		return {
 			
 			     getHeroNames: $resource('/hero',{},{
-				'get':{method:'GET',isArray:true}
-			     
+
+		
+				'get':{method:'GET',isArray:true},
+				
+				'update':{method:'POST'}
+
 			})
 			
 			
 			
 		}
-		
-			
-		console.log(getHeroNames);	
-			
-		
+				
 	})
 	
 })();
