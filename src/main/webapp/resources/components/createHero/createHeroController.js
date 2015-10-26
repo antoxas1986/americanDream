@@ -15,13 +15,11 @@
 							happieness : 5
 						};
 
-						$scope.create = function(hero) {
-							if (inputName.value == "") {
-								alert("Your Hero needs a name");
-							}
-							$scope.updateHero = function() {
-								alert("before");
-								ServiceCreateHero.hero.update($scope.hero,
+						$scope.create = function() {
+//							if (inputName.value == "") {
+//								alert("Your Hero needs a name");
+//							}
+							createHeroService.hero.create($scope.hero,
 										function() {
 											console.log("success");
 											// do something here after y
@@ -31,7 +29,6 @@
 											// else.
 
 										});
-							};
 							
 						};
 						//alert("Nice name");
