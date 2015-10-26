@@ -1,21 +1,23 @@
-(function(){ 
-	angular.module('services')
-	.factory('createHeroService', function($resource, $rootScope){
-		return {
-			
-			     getHeroNames: $resource('/hero',{},{
+(function() {
+	angular.module('services').factory('createHeroService',
+			function($resource, $rootScope) {
+				return {
 
-		
-				'get':{method:'GET',isArray:true},
-				
-				'update':{method:'POST'}
+					getHeroNames : $resource('/hero', {}, {
+						'get' : {
+							method : 'GET',
+							isArray : true
+						}
+					}),
+
+					updateHero : $resource('/hero', {}, {
+						'update' : {
+							method : 'POST'
+						}
+					})
+
+				}
 
 			})
-			
-			
-			
-		}
-				
-	})
-	
+
 })();
