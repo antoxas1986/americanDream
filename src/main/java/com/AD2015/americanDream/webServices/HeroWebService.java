@@ -33,8 +33,8 @@ public class HeroWebService {
 	
 	@RequestMapping(value = "/hero", method = RequestMethod.POST)
 	public void createHero(@RequestBody Hero hero) {
-		System.out.println(hero.getName());
-		//heroService.create(hero);
+		System.out.println(hero.getAge());
+		heroService.create(hero);
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)

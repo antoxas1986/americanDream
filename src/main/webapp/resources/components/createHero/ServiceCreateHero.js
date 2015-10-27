@@ -2,7 +2,7 @@
 	angular.module('services').factory('createHeroService',
 			function($resource, $rootScope) {
 				return {
-                    hero : $resource('/hhhero', {}, {
+                    hero : $resource('/hero', {}, {
 						'create' : {
 							method : 'POST'
 						}

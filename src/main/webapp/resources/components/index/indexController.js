@@ -14,6 +14,7 @@
 
 			      iService.getHeroNames.get().$promise.then(function(data){
 					$scope.heroNames = data;
+					console.log($scope.heroNames)
 				});
 
 //			      iService.getHeroNames.get().$promise.then(function(data){

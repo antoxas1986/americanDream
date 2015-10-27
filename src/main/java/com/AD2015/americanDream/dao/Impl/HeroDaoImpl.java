@@ -19,8 +19,8 @@ public class HeroDaoImpl implements HeroDao {
 	public static final String UPDATE_HERO = "UPDATE hero SET name = ?,age =?, gender = ?, experience = ?,money =?"
 			+ "strength=?,level=?,happiness=? WHERE name=?";
 	public static final String DELETE_HERO = "DELETE FROM hero WHERE name = ?";
-	public static final String CREATE_HERO = "INSERT INTO hero (name, age, gender, experience, money, strength, level, happiness) "
-			+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+	public static final String CREATE_HERO = "INSERT INTO hero (name, age, experience, money, strength, level, happiness) "
+			+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 	public static final String GET_HERO = "SELECT name, age, gender, experience, money, strength, level, happiness FROM hero  WHERE name = ?";
     public static final String GET_NAMES = "SELECT name FROM hero";
 	
@@ -51,8 +51,8 @@ public class HeroDaoImpl implements HeroDao {
 	@Override
 	public void create(Hero hero) {
 
-		jdbcTemplate.update(CREATE_HERO, hero.getName(), hero.getAge(), hero.getGender(), hero.getExperiance(),
-				hero.getMoney(), hero.getStrength(), hero.getLevel(), hero.getHappieness(), hero.getName());
+		jdbcTemplate.update(CREATE_HERO, hero.getName(), hero.getAge(), hero.getExperiance(),
+				hero.getMoney(), hero.getStrength(), hero.getLevel(), hero.getHappieness());
 
 	}
     
