@@ -8,7 +8,7 @@
 						}
 					}),
 					
-					getHeroNames : $resource('/hero', {}, {
+					getHeroNames : $resource('/hero', {username: '@username'}, {
 						'get' : {
 							method : 'GET',
 							isArray : true
