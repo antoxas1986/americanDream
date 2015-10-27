@@ -8,6 +8,7 @@
 					function($rootScope, $scope, createHeroService) {
 						$scope.hero = {
 							age : 21,
+							//gender : m,
 							experiance : 0,
 							money : 100,
 							strength : 2,
