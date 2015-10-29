@@ -1,6 +1,6 @@
 (function(){ 
 	angular.module('services')
-	.factory('workService', function($resource, $rootScope){
+	.factory('gamePlayService', function($resource, $rootScope){
 		
 		
 		

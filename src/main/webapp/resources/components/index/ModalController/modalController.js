@@ -32,15 +32,16 @@ angular.module('americanDream').controller('ModalDemoCtrl', function ($scope, $u
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $uibModal service used above.
 
-angular.module('americanDream').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+angular.module('americanDream').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items, $location) {
 
   $scope.items = items;
   $scope.selected = {
     item: $scope.items[0]
   };
 
-  $scope.ok = function () {
+  $scope.ok = function () { 
     $uibModalInstance.close($scope.selected.item);
+    $location.path('/gamePlay'); 
   };
 
   $scope.cancel = function () {

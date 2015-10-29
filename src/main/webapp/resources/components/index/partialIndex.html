@@ -6,7 +6,6 @@
     <nav class="cl-effect-2" >
         <a href='#' class="color-4"><span ng-click="open()" data-hover="Select a hero">Select hero</span></a>
     </nav>
-   <div>{{heroNames}}</div>
 	
 </div>
 
@@ -18,8 +17,8 @@
         </div>
         <div class="modal-body">
             <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                <li ng-repeat="item in items track by $index">
+                    <a href="#"  ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
                 </li>
             </ul>
             Selected: <b>{{ selected.item }}</b>
