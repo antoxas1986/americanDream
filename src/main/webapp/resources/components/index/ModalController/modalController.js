@@ -1,9 +1,8 @@
 angular.module('americanDream').controller('ModalDemoCtrl', function ($scope, $uibModal, $log) {
 
   $scope.animationsEnabled = true;
- 
+  
   $scope.open = function () {
-
     var modalInstance = $uibModal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'myModalContent.html',
