@@ -12,10 +12,10 @@
 				
 				//This makes call to back-end to bring all available hero`s names.
 
-				iService.getHeroNames.get().$promise.then(function(data){
+				iService.getNames.get().$promise.then(function(data){
 					$scope.heroNames = data;
-					console.log(data)
-				});
+				console.log(data)				});
+			
 
 //			      iService.getHeroNames.get().$promise.then(function(data){
 //					$scope.heroNames = data;

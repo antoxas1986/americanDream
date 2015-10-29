@@ -4,7 +4,7 @@
 			  function($rootScope, $scope, gamePlayService) {
 				
 				
-				
+			
 				
 				
 				

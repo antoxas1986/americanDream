@@ -47,7 +47,7 @@ public class HeroWebService {
 		return heroService.getHeroByUserName(username);
 	}
 	
-	@RequestMapping(value = "/hero", method = RequestMethod.GET)
+	@RequestMapping(value = "/names", method = RequestMethod.GET)
 	public List<String> getHeroNames() {
 		return heroService.getHeroNames();
 	}
