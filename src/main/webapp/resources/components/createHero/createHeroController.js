@@ -17,9 +17,7 @@
 						};
 
 						$scope.create = function() {
-//							if (inputName.value == "") {
-//								alert("Your Hero needs a name");
-//							}
+							
 							createHeroService.hero.create($scope.hero,
 										function() {
 											console.log("success");

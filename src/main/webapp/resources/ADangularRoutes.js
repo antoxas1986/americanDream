@@ -13,6 +13,10 @@
 			templateUrl : '/resources/components/createHero/partialCreateHero.html',
 			controller : 'createHeroController',
 		})
+		.when('/gamePlay', {
+			templateUrl : '/resources/components/gamePlay/partialGamePlay.html',
+			controller : 'gamePlayController',
+		})
 		
 		.otherwise({
 			redirectTo : '/'
