@@ -1,1 +1,38 @@
-{{hero.name}}
+
+<div id="infoBar">
+   <table class="table">
+        <thead>
+        <h1 style="color: green">{{hero.name}}</h1>
+            <tr>
+                <th>Age</th>
+                <th>Experience</th>
+                <th>Wollet</th>
+                <th>Strength</th>
+                <th>Level</th>
+                <th>Happiness</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{hero.age}}</td>
+                <td>{{hero.experiance}}</td>
+                <td>{{hero.money}}</td>
+                <td>{{hero.strength}}</td>
+                <td>{{hero.level}}</td>
+                <td>{{hero.happieness}}</td>
+            </tr>
+        </tbody>
+      </table>  
+</div>
+<div id="sideButtons">
+    <button type="submit" id="work" class="btn btn-success" data-ng-click="work()">Work</button><br>
+    <br>
+    <button type="submit" id="eat" class="btn btn-success" data-ng-click="eat()">Eat</button><br>
+    <br>
+    <button type="submit" id="rest" class="btn btn-success" data-ng-click="rest()">Rest</button><br>
+    <div id="timer"></div>
+    <br>
+    <button type="submit" id="party" class="btn btn-success" data-ng-click="party()">Party</button><br>
+</div>
+

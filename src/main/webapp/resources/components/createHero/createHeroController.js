@@ -4,8 +4,8 @@
 			[
 					'$rootScope',
 					'$scope',
-					'createHeroService',
-					function($rootScope, $scope, createHeroService) {
+					'createHeroService','$location','indexService',
+					function($rootScope, $scope, createHeroService, $location, iService) {
 						$scope.hero = {
 							age : 21,
 							//gender : m,
@@ -20,13 +20,7 @@
 							
 							createHeroService.hero.create($scope.hero,
 										function() {
-											console.log("success");
-											// do something here after y
-											// update
-											// hero. Change page or
-											// something
-											// else.
-
+											$location.path('/');
 										});
 							
 						};
