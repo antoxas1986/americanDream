@@ -9,13 +9,22 @@ angular
 						'$timeout',
 						function($rootScope, $scope, gamePlayService, $timeout) {
 
-							$scope.work = function(){
-								
+							$scope.work = function() {
+
 							}
 							$scope.eat = function() {
 
+								var foodSelect = angular.element(document
+										.querySelector('#selectFood'));
+								foodSelect.empty();
+								foodSelect.append('<select id="select">' 
+											+ '<option value="apple">Apple</option>'
+											+ '<option value="soup">Soup</option>'
+											+ '<option value="burito">Burito</option>'
+											+ '</select>'
+											);
+								
 							};
-
 							$scope.rest = function() {
 								$scope.hero.strength += 3;
 								document.getElementById("rest").disabled = true;
@@ -43,5 +52,8 @@ angular
 							$scope.party = function() {
 
 							};
+							
+						
+							
 
 						} ]);
