@@ -19,18 +19,18 @@ public class HeroDaoImpl implements HeroDao {
 	public static final String UPDATE_HERO = "UPDATE hero SET name = ?,age =?, gender = ?, experience = ?,money =?"
 			+ "strength=?,level=?,happiness=? WHERE name=?";
 	public static final String DELETE_HERO = "DELETE FROM hero WHERE name = ?";
-	public static final String CREATE_HERO = "INSERT INTO hero (name, age, gender, experience, money, strength, level, happiness) "
-			+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+	public static final String CREATE_HERO = "INSERT INTO hero (name, age, experience, money, strength, level, happiness) "
+			+ "VALUES(?, ?, ?, ?, ?, ?, ?)";
 	public static final String GET_HERO = "SELECT name, age, gender, experience, money, strength, level, happiness FROM hero  WHERE name = ?";
-    public static final String GET_NAMES = "SELECT name FROM hero";
-	
+	public static final String GET_NAMES = "SELECT name FROM hero";
+
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
 	public void setJdbcTemplate(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-	
+
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
@@ -38,8 +38,10 @@ public class HeroDaoImpl implements HeroDao {
 	@Override
 	public void updateHero(Hero hero) {
 
-		jdbcTemplate.update(UPDATE_HERO, hero.getName(), hero.getAge(), hero.getGender(), hero.getExperiance(),
-				hero.getMoney(), hero.getStrength(), hero.getLevel(), hero.getHappieness(), hero.getName());
+		jdbcTemplate.update(UPDATE_HERO, hero.getName(), hero.getAge(),
+				hero.getGender(), hero.getExperiance(), hero.getMoney(),
+				hero.getStrength(), hero.getLevel(), hero.getHappieness(),
+				hero.getName());
 	}
 
 	@Override
@@ -51,23 +53,25 @@ public class HeroDaoImpl implements HeroDao {
 	@Override
 	public void create(Hero hero) {
 
-		jdbcTemplate.update(CREATE_HERO, hero.getName(), hero.getAge(), hero.getGender(), hero.getExperiance(),
-				hero.getMoney(), hero.getStrength(), hero.getLevel(), hero.getHappieness(), hero.getName());
+		jdbcTemplate.update(CREATE_HERO, hero.getName(), hero.getAge(),
+				hero.getExperiance(), hero.getMoney(), hero.getStrength(),
+				hero.getLevel(), hero.getHappieness());
 
 	}
-    
+
 	@Override
 	public Hero getHeroByUserName(String username) {
-
-		return jdbcTemplate.queryForObject(GET_HERO, new Object[] { username }, new HeroMapper());
+		Hero hero = jdbcTemplate.queryForObject(GET_HERO,
+				new Object[] { username }, new HeroMapper());
+		System.out.println(hero.getName() + hero.getAge());
+		return hero;
 
 	}
 
 	@Override
 	public List<String> getHeroNames() {
-		
+
 		return jdbcTemplate.queryForList(GET_NAMES, String.class);
 	}
-	
-	
+
 }
